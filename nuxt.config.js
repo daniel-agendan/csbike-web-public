@@ -16,7 +16,8 @@ export default {
   publicRuntimeConfig: {
     facebookBaseApi: 'https://graph.facebook.com',
     facebookVersionApi: 'v9.0',
-    facebookTokenApi: process.env.FACEBOOK_TOKEN_API || 'EAAHfXrwMsksBAM0yPF0S6qKLMunm01XtgFLy1ahnZBlCZBduYjcjdUXqpiel7wZBfc4b8H4KMm7qVPpw2d9jPXtHFEhPVtYV7yaDlbKnUX8Tgl20eC1MJvSqm1pQb6uSFLbIA6ZBUUpcwXkyHW3EyoT7p89RcqGWwCWV0ETgAFRSUZBA4P4aC'
+    facebookTokenApi: process.env.FACEBOOK_PERMANENT_TOKEN || '',
+    igid: '17841445682056786'
   },
   privateRuntimeConfig: {
     facebookApiSecret: process.env.FACEBOOK_API_SECRET
@@ -26,7 +27,9 @@ export default {
   buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/fontawesome'],
   fontawesome: {
     icons: {
-      solid: ['faHome', 'faHeart']
+      solid: ['faHome', 'faHeart', 'faSpinner', 'faDotCircle', 'faEllipsisH', 'faFan'],
+      regular: ['faDotCircle', 'faSun', 'faSnowflake'],
+      brands: ['faInstagram']
     }
   }
 };

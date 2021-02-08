@@ -49,8 +49,6 @@ export default {};
 </script>
 
 <style lang="sass" scoped>
-a.nuxt-link-active
-
 a.nuxt-link-exact-active
   @apply text-green-500 border-green-500
 </style>

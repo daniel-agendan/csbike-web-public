@@ -1,22 +1,24 @@
 <template>
   <div class="flex lg:flex-row flex-col items-center lg:py-8 lg:space-x-8">
     <div>
-      <div
-        class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full m-0.5 mr-2  w-56 h-56 relative overflow-hidden uk-transition-toggle"
-      >
+      <div class="bg-gradient-to-tr from-green-600 to-blue-600 p-1 rounded-full m-0.5 mr-2  w-56 h-56 relative overflow-hidden uk-transition-toggle">
         <img
           v-if="profile.profile_picture_url"
           :src="profile.profile_picture_url"
           class="bg-gray-200 border-4 border-white rounded-full w-full h-full dark:border-gray-900"
         />
 
-        <div
-          class="absolute -bottom-3 custom-overly1 flex justify-center pt-4 pb-7 space-x-3 text-2xl text-white uk-transition-slide-bottom-medium w-full"
-        >
-          <a href="#" class="hover:text-white">
+        <div class="absolute -bottom-3 custom-overly1 flex justify-center pt-4 pb-7 space-x-3 text-2xl text-white uk-transition-slide-bottom-medium w-full">
+          <a
+            href="#"
+            class="hover:text-white"
+          >
             <i class="uil-camera"></i>
           </a>
-          <a href="#" class="hover:text-white">
+          <a
+            href="#"
+            class="hover:text-white"
+          >
             <i class="uil-crop-alt"></i>
           </a>
         </div>
@@ -36,21 +38,18 @@
         <a href="#">Movies</a>
       </div>
 
-      <div
-        class="capitalize flex font-semibold space-x-3 text-center text-sm my-2"
-      >
+      <div class="capitalize flex font-semibold space-x-3 text-center text-sm my-2">
         <a
           href="#"
           class="bg-gray-300 shadow-sm p-2 px-6 rounded-md dark:bg-blue-700"
         >
-          Facebook</a
-        >
+          Facebook</a>
         <a
           href="#"
           class="bg-pink-500 shadow-sm p-2 pink-500 px-6 rounded-md text-white hover:text-white hover:bg-pink-600"
         >
-          Instagram</a
-        >
+          <font-awesome-icon :icon="['fab', 'instagram']" class="fa-1x mr-2" />Instagram
+        </a>
         <div>
           <a
             href="#"
@@ -105,9 +104,7 @@
         </div>
       </div>
 
-      <div
-        class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100"
-      >
+      <div class="divide-gray-300 divide-transparent divide-x grid grid-cols-3 lg:text-left lg:text-lg mt-3 text-center w-full dark:text-gray-100">
         <div class="flex lg:flex-row flex-col">
           {{ profile.media_count }} <strong class="lg:pl-2">Inlägg</strong>
         </div>
@@ -124,12 +121,12 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      profile: [],
-    };
+      profile: []
+    }
   },
-  async fetch() {
+  async fetch () {
     const igid = 17841445682056786
     const fields = 'id,biography,media_count,follows_count,followers_count,website,name,username,profile_picture_url'
 
@@ -140,7 +137,9 @@ export default {
         headers: {},
       }
     )
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json()
+      })
       .catch((err) => {
         console.error(err);
       });
